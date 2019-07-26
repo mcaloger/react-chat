@@ -1,0 +1,12 @@
+.App {
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+}
+
+#newMessageInput {
+  width: 100%;
+  height: 100%;
+  flex: 4;
+  resize: none;
+}
