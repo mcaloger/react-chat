@@ -16,33 +16,25 @@ const NewMessagEntry = styled.textarea`
     flex: 4;
     resize: none;
 `
-const NewMessageButton = styled.button`
-    width: 100%;
-    height: 100%;
-    flex: 1;
-`
 
 export default function NewMessage() {
 
     const [message, setMessage] = useState('');
 
-    let handleClick = () => {
-        let constructedMessage: Message = new Message(message)
-        emitMessage(constructedMessage);
-        setMessage('');
-    }
+    let handleEnterPress = (e: any) => {
+        if(e.key === 'Enter' && message !== ''){
+            let constructedMessage: Message = new Message(message)
+            emitMessage(constructedMessage);
 
-    let handlePressEnter = (e: any) => {
-        if(e.key === 'Enter'){
-            handleClick()
+            // reset textbox
+            setMessage('');
         }
     }
 
     return (
         <div>
             <NewMessageContainer>
-                <NewMessagEntry placeholder="Enter message here" onChange={e => setMessage(e.target.value)} onKeyUp={handlePressEnter} value={message}></NewMessagEntry>
-                <NewMessageButton onClick={handleClick}>Send</NewMessageButton>
+                <NewMessagEntry placeholder="Enter message here" onChange={e => setMessage(e.target.value)} onKeyUp={handleEnterPress} value={message}></NewMessagEntry>
             </NewMessageContainer>
         </div>
     )

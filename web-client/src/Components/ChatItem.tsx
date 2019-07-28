@@ -6,10 +6,12 @@ export default function ChatItem(props: any) {
 
     const MessageContainer = styled.div`
         display: flex; 
+        padding: 10px;
+        background: #fff;
+        border-radius: 5px;
         &:nth-child(2n) {
             background: #eee;
-        }
-        padding: 10px;
+        }   
     `
 
     const UsernameContainer = styled.div`

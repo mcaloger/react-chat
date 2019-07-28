@@ -6,7 +6,7 @@ export default function AppHeader() {
         display: flex;
         width: 100%
         height: 50px;
-        background: #2196F3;
+        background: #3F51B5;
         align-items: center;
         justify-content: space-between;
         padding-left: 10px;
@@ -31,7 +31,7 @@ export default function AppHeader() {
     return (
         <div>
             <HeaderContainer>
-                <HeaderText>React Chat</HeaderText>
+                <HeaderText>React + Typescript + Socket.IO + ExpressJS Chat</HeaderText>
                 <HeaderSignIn>{signedIn ? <div>Log Out</div> : <div>Sign In</div>}</HeaderSignIn>
             </HeaderContainer>
         </div>
